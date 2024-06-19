@@ -1,0 +1,7 @@
+Python script to identify CpG islands in all sequences of a given fasta, window size and window step size (https://www.bioinformatics.org/sms2/cpg_islands.html)
+
+"CpG Islands reports potential CpG island regions using the method described by Gardiner-Garden and Frommer (1987). The calculation is performed using a 200 bp window moving across the sequence at 1 bp intervals. CpG islands are defined as sequence ranges where the Obs/Exp value is greater than 0.6 and the GC content is greater than 50%. The expected number of CpG dimers in a window is calculated as the number of 'C's in the window multiplied by the number of 'G's in the window, divided by the window length. CpG islands are often found in the 5' regions of vertebrate genes, therefore this program can be used to highlight potential genes in genomic sequences."
+
+usage: python script_2023-12-11_identify_CpG-islands.py reference/GCA_900700415.2_Ch_v2.0.2_genomic.fa [optional: INT(windowsize[default:200]) INT(stepsize[default:1])]
+
+it works with 200 bp window size and 1 bp step size - default if nothing else given if unchanged then the script outputs the result in CpGislands that is located where the script is executed from... run: $ make CpGislands before running script and execute from same location where output folder is located in). the output file is named like the input fasta file but with the ending ".CpGislands" instead of ".f*"
